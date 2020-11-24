@@ -1,0 +1,120 @@
+/* Mi código CSS */
+
+body {
+    padding-top: 60px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lato', sans-serif;
+}
+
+/*****************************************************************
+
+    HEADER
+
+/*****************************************************************/
+
+#header {
+    background-color: #222;
+    border-bottom: 4px solid #FF8F00;
+}
+
+#header-logo {
+    width: auto;
+    height: 20px;
+}
+
+/*****************************************************************
+
+    HOME
+
+/*****************************************************************/
+
+#home-intro {
+    border-bottom: 4px solid #FF8F00;
+    height: 600px;
+    background-size: cover;
+    background-position: center center;
+    background-image: url("../img/cars_home/audi_1.jpg");
+    margin-bottom: 30px;
+}
+
+#home h1 span {
+    font-weight: 300;
+}
+
+#home .card h4 {
+    font-size: 1.24rem;
+    margin: 0.3rem 0 0.2rem;
+}
+
+@media (max-width: 767px) {
+    #home-intro {
+        height: 250px;
+    }
+    #home h1 {
+        font-size: 26px;
+    }
+
+}
+
+
+/*****************************************************************
+
+    FOOTER
+
+/*****************************************************************/
+
+#footer {
+    border-top: 4px solid #FF8F00;
+    background-color: #222;
+    margin-top: 40px;
+    color: #EEEEEE;
+    padding: 40px 0 40px 0;
+    font-size: 16px;
+}
+
+#footer-logo {
+    width: auto;
+    height: 20px;
+    margin-bottom: 15px;
+}
+
+#footer ul {
+    margin: 0;
+    padding: 0;
+}
+
+#footer ul li {
+    list-style: none;
+    margin-bottom: 6px;
+}
+
+#footer ul li a,
+#footer ul li a:visited {
+    color: #EEEEEE;
+}
+
+.row1 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.filter-form{
+    background-color: rgb(230, 230, 230);
+    padding-top:15px;
+    padding-bottom: 20px;
+    border-radius: .5rem;
+}
+
+label {
+    font-weight: bold; 
+}
+button {
+    font-weight: bold; 
+}
+.imgBadge {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    color: white;
+}
