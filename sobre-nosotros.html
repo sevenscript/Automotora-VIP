@@ -13,7 +13,7 @@
     />
     <meta name="author" content="Automotora VIP" />
 
-    <title>Sobre Nosotros | Automotora VIP</title>
+    <title>Automotora VIP</title>
 
     <!-- CSS de Bootstrap -->
     <link
@@ -33,7 +33,7 @@
 
     <!-- CSS Google Fonts -->
     <link
-      href="https://fonts.googleapis.com/css?family=Lato:300,400,700"
+      href="https://fonts.googleapis.com/css?family=Lato:400,700,300"
       rel="stylesheet"
       type="text/css"
     />
@@ -43,28 +43,238 @@
   </head>
 
   <body>
-    <!-- Button trigger modal -->
-    <button
-      type="button"
-      class="btn btn-primary"
-      data-toggle="modal"
-      data-target="#exampleModal"
-    >
-      Launch demo modal
-    </button>
+    <nav id="header" class="navbar navbar-expand-md fixed-top navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+            id="header-logo"
+            src="img/automotora_vip_logo.png"
+            alt="AutoVIP"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#links"
+          aria-controls="links"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="links" class="collapse navbar-collapse justify-content-end">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="ventas.html">Venta 0km</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ventas.html">Venta Usados</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sobre-nosotros.html">Sobre Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="#"
+                data-toggle="modal"
+                data-target="#contacto-modal"
+                >Contacto</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
+    <div id="about-us">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <h1 class="page-header">Sobre Nosotros</h1>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <img
+              id="company-photo"
+              class="img-thumbnail img-fluid"
+              src="img/about_us/about.jpg"
+              alt="Sobre AUTOVIP"
+            />
+          </div>
+          <div class="col-md-6">
+            <h2><span>AUTO</span><strong>VIP</strong></h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed
+              voluptate nihil eum consectetur similique? Consectetur, quod,
+              incidunt, harum nisi dolores delectus reprehenderit voluptatem
+              perferendis dicta dolorem non blanditiis ex fugiat.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe,
+              magni, aperiam vitae illum voluptatum aut sequi impedit non velit
+              ab ea pariatur sint quidem corporis eveniet. Odit, temporibus
+              reprehenderit dolorum!
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et,
+              consequuntur, modi mollitia corporis ipsa voluptate corrupti eum
+              ratione ex ea praesentium quibusdam? Aut, in eum facere corrupti
+              necessitatibus perspiciatis quis?
+            </p>
+            <p>
+              <button
+                type="button"
+                name="button"
+                class="btn btn-outline-secondary"
+                data-toggle="modal"
+                data-target="#contacto-modal"
+              >
+                <i class="far fa-envelope"></i> Contacto
+              </button>
+            </p>
+          </div>
+        </div>
+
+        <!-- Equipo -->
+        <h2 class="page-header">Nuestro Equipo</h2>
+        <div class="card-deck">
+          <div class="card text-center">
+            <img
+              class="card-img-top"
+              src="img/about_us/cofounder_1.jpg"
+              alt="Co-Fundador"
+            />
+            <div class="card-body">
+              <h3 class="card-title">
+                Juan Pérez<br />
+                <small>Co-Fundador</small>
+              </h3>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste
+                saepe et quisquam nesciunt maxime. This content is a little bit
+                longer.
+              </p>
+              <ul class="list-inline">
+                <li class="list-inline-item">
+                  <a href="#"><i class="fab fa-2x fa-facebook-square"></i></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#"><i class="fab fa-2x fa-linkedin"></i></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#"><i class="fab fa-2x fa-twitter-square"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="card text-center">
+            <img
+              class="card-img-top"
+              src="img/about_us/cofounder_2.jpg"
+              alt="Co-Fundador"
+            />
+            <div class="card-body">
+              <h3 class="card-title">
+                María Rodríguez<br />
+                <small>Co-Fundador</small>
+              </h3>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste
+                saepe et quisquam nesciunt maxime.
+              </p>
+              <ul class="list-inline">
+                <li class="list-inline-item">
+                  <a href="#"><i class="fab fa-2x fa-facebook-square"></i></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#"><i class="fab fa-2x fa-linkedin"></i></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#"><i class="fab fa-2x fa-twitter-square"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="card text-center">
+            <img
+              class="card-img-top"
+              src="img/about_us/cofounder_3.jpg"
+              alt="Co-Fundador"
+            />
+            <div class="card-body">
+              <h3 class="card-title">
+                Juan Gómez<br />
+                <small>Co-Fundador</small>
+              </h3>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste
+                saepe et quisquam nesciunt maxime. This card has even longer
+                content than the first to show that equal height action.
+              </p>
+              <ul class="list-inline">
+                <li class="list-inline-item">
+                  <a href="#"><i class="fab fa-2x fa-facebook-square"></i></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#"><i class="fab fa-2x fa-linkedin"></i></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#"><i class="fab fa-2x fa-twitter-square"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- /.card-deck -->
+      </div>
+    </div>
+    <!-- /#about-us -->
+
+    <div id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <img
+              id="footer-logo"
+              src="img/automotora_vip_logo.png"
+              alt="AutoVIP"
+            />
+          </div>
+
+          <div class="col-md-3">
+            <ul>
+              <li><a href="ventas.html">Venta 0km</a></li>
+              <li><a href="ventas.html">Venta Usados</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-3">
+            <ul>
+              <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+              <li>
+                <a href="#" data-toggle="modal" data-target="#contacto-modal"
+                  >Contacto</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-3">
+            <p style="color: #ddd;">Copyright &copy; AutoVIP 2020</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="contacto-modal" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <h5 class="modal-title">Contacto</h5>
             <button
               type="button"
               class="close"
@@ -75,21 +285,54 @@
             </button>
           </div>
           <div class="modal-body">
-            ...
+            <form>
+              <div class="form-group">
+                <label for="name">Nombre</label>
+                <input
+                  type="text"
+                  name="name"
+                  value=""
+                  class="form-control"
+                  placeholder="Ingresar nombre completo..."
+                />
+              </div>
+              <!-- /.form-group -->
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  value=""
+                  class="form-control"
+                  placeholder="Ingresar Email..."
+                />
+              </div>
+              <!-- /.form-group -->
+              <div class="form-group">
+                <label for="message">Mensaje</label>
+                <textarea
+                  name="message"
+                  rows="8"
+                  cols="40"
+                  class="form-control"
+                  placeholder="Ingresar mensaje..."
+                ></textarea>
+              </div>
+              <!-- /.form-group -->
+            </form>
           </div>
           <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-dismiss="modal"
-            >
-              Close
+            <button type="button" class="btn btn-success" data-dismiss="modal">
+              Enviar
             </button>
-            <button type="button" class="btn btn-primary">Save changes</button>
           </div>
         </div>
+        <!-- /.modal-content -->
       </div>
+      <!-- /.modal-dialog -->
     </div>
+    <!-- /.modal -->
+
     <!-- jQuery -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"

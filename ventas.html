@@ -13,7 +13,7 @@
     />
     <meta name="author" content="Automotora VIP" />
 
-    <title>Ventas | Automotora VIP</title>
+    <title>Automotora VIP</title>
 
     <!-- CSS de Bootstrap -->
     <link
@@ -33,7 +33,7 @@
 
     <!-- CSS Google Fonts -->
     <link
-      href="https://fonts.googleapis.com/css?family=Lato:300,400,700"
+      href="https://fonts.googleapis.com/css?family=Lato:400,700,300"
       rel="stylesheet"
       type="text/css"
     />
@@ -88,122 +88,256 @@
       </div>
     </nav>
 
-    <div id="app" class="container">
-      <div class="row row1">
-        <div class="col">
-          <h2>Ventas</h2>
-        </div>
-        <div class="col">
-          <div class="float-right">
-            <i class="fas fa-exchange-alt"></i> UYU/USD: 20,10
+    <div id="sales">
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <h1>Ventas</h1>
           </div>
-        </div>
-      </div>
-      <hr />
-      <div class="row">
-        <div class="col-3 p-3">
-          <div class="p-3 filter-form">
-            <h3>Filtro</h3>
-            <hr />
-            <form>
-              <div class="form-group">
-                <label for="year">Año</label>
-                <select class="form-control" id="year">
-                  <option disabled selected hidden>Seleccionar...</option>
-                  <option>2</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="brand">Marca</label>
-                <select class="form-control" id="brand">
-                  <option disabled selected hidden>Seleccionar...</option>
-                  <option>2</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="model">Modelo</label>
-                <select class="form-control" id="model">
-                  <option disabled selected hidden>Seleccionar...</option>
-                  <option>2</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="state">Estado</label>
-                <select class="form-control" id="state">
-                  <option disabled selected hidden>Seleccionar...</option>
-                  <option>2</option>
-                </select>
-              </div>
-            </form>
-            <button type="button" class="btn btn-warning btn-block">
-              <i class="far fa-search"></i><strong> Filtrar</strong>
-            </button>
-          </div>
-          <button
-            type="button"
-            class="btn btn-light btn-block mt-3 btn-outline-secondary"
-          >
-            <i class="fas fa-dollar-sign"></i> <strong>Cambiar moneda</strong>
-          </button>
-        </div>
-        <div  class="col-9">
-          <div v-for="auto in autos">
-            <div  class="row">
-              <div class="col-3">
-                <div class="position-relative">
-                  <img
-                    class="img-fluid img-thumbnail w-100"
-                    src="img/cars_sales/audi_a6_quattro_2016.jpg"
-                    alt="auto"
-                  />
-                  <span class="badge badge-warning imgBadge">Nuevo</span>
-                </div>
-              </div>
-              <div class="col-9">
-                <div class="row">
-                  <div class="col-6 text-left">
-                    <h2>Audi</h2>
-                  </div>
-                  <div class="col-6 text-right">
-                    <h6>
-                      2017 | USD 92.000 | <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i><i class="fas fa-star"></i
-                      ><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </h6>
-                  </div>
-                </div>
-                <div>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quidem, eos assumenda aspernatur perspiciatis a sed,
-                    voluptatum, iure expedita quasi dolor consequuntur provident
-                    ipsum veritatis sapiente itaque reprehenderit quisquam!
-                    Mollitia, delectus?
-                  </p>
-                </div>
-                <button type="button" class="btn btn-success">
-                  <i class="fas fa-shopping-cart"></i><strong> Comprar</strong>
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-light ml-1 btn-outline-secondary"
-                >
-                  <i class="far fa-plus-square"></i>
-                  <strong>Más información</strong>
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-light ml-1 btn-outline-secondary"
-                >
-                  <i class="fas fa-share-square"></i> <strong>Compartir</strong>
-                </button>
-              </div>
+          <div class="col-6">
+            <div id="rate" class="text-right">
+              <i class="fas fa-exchange-alt"></i> UYU/USD: <span></span>
             </div>
           </div>
-          <hr />
+        </div>
+        <hr />
+        <div class="row">
+          <div class="col-md-3">
+            <div id="filter">
+              <h4>Filtro</h4>
+
+              <div class="form-group">
+                <label for="year">Año</label>
+                <select class="form-control" name="year" v-model="yearSelected">
+                  <option value="" disabled selected>Seleccionar...</option>
+                  <option v-for="year in years" v-bind:value="year"
+                    >{{year}}</option
+                  >
+                </select>
+              </div>
+              <!-- /.form-group -->
+
+              <div class="form-group">
+                <label for="brand">Marca</label>
+                <select class="form-control" name="brand" id="brandSelect" v-model="brandSelected">
+                  <option value="" disabled selected>Seleccionar...</option>
+                  <option v-for="brand in brands" v-bind:value="brand"
+                    >{{brand}}</option
+                  >
+                </select>
+              </div>
+              <!-- /.form-group -->
+
+              <div class="form-group">
+                <label for="model">Modelo</label>
+                <select class="form-control" id="model" name="model" v-model="modelSelected" disabled>
+                  <option value="" disabled selected>Seleccionar...</option>
+                  <option value="">Todos</option>
+                  <option v-for="model in models" v-bind:value="model"
+                  >{{model}}</option
+                >
+                </select>
+              </div>
+              <!-- /.form-group -->
+
+              <div class="form-group">
+                <label for="select-status">Estado</label>
+                <select id="select-status" class="form-control" name="status" v-model="statusSelected">
+                  <option value="">Seleccionar...</option>
+                  <option value="">Todos</option>
+                  <option value="1">Nuevo</option>
+                  <option value="0">Usado</option>
+                </select>
+              </div>
+              <!-- /.form-group -->
+
+              <button
+                type="button"
+                id="btn-filter"
+                name="button"
+                class="btn btn-warning btn-sm btn-block"
+              >
+                <i class="fas fa-search"></i> Filtrar
+              </button>
+            </div>
+            <!-- /#filter -->
+
+            <button
+              id="btn-currency"
+              type="button"
+              name="button"
+              class="btn btn-outline-secondary btn-block btn-sm"
+            >
+              <i class="fas fa-dollar-sign"></i> Cambiar moneda
+            </button>
+          </div>
+
+          <div class="col-md-9">
+            <div class="car" v-for="car in cars">
+              <div class="row">
+                <div class="col-img col-lg-4">
+                  <img v-bind:src="car.image" v-bind:alt="car.brand + ' ' + car.model" />
+                  <span class="badge badge-warning" v-if="car.status == 1">Nuevo</span>
+                </div>
+
+                <div class="col-lg-8">
+                  <div class="row">
+                    <div class="col-xl-6">
+                      <h3>{{car.brand}} {{car.model}}</h3>
+                    </div>
+
+                    <div class="col-xl-6">
+                      <div class="car-info">
+                        {{car.year}} | USD {{car.price_usd}} |
+                        <div class="rating">
+                          <i class="fas fa-star"></i><i class="fas fa-star"></i
+                          ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                          ><i class="fas fa-star"></i>
+                        </div>
+                        <!-- /.rating -->
+                      </div>
+                      <!-- /.car-info -->
+                    </div>
+                  </div>
+
+                  <p v-html="car.description" class="car-description">
+                
+                  </p>
+                  <div class="car-footer">
+                    <button
+                      type="button"
+                      name="button"
+                      class="btn btn-success btn-sm"
+                    >
+                      <i class="fas fa-shopping-cart"></i> Comprar
+                    </button>
+                    <button
+                      type="button"
+                      name="button"
+                      class="btn btn-outline-secondary btn-sm"
+                    >
+                      <i class="far fa-plus-square"></i> Más info<span
+                        >rmación</span
+                      >
+                    </button>
+                    <button
+                      type="button"
+                      name="button"
+                      class="btn btn-outline-secondary btn-sm"
+                    >
+                      <i class="far fa-share-square"></i> Compartir
+                    </button>
+                  </div>
+                  <!-- /.car-footer -->
+                </div>
+              </div>
+            </div>
+            <!-- /.car -->
+
+          </div>
         </div>
       </div>
     </div>
+    <!-- /#sales -->
+
+    <div id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <img
+              id="footer-logo"
+              src="img/automotora_vip_logo.png"
+              alt="AutoVIP"
+            />
+          </div>
+
+          <div class="col-md-3">
+            <ul>
+              <li><a href="ventas.html">Venta 0km</a></li>
+              <li><a href="ventas.html">Venta Usados</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-3">
+            <ul>
+              <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+              <li>
+                <a href="#" data-toggle="modal" data-target="#contacto-modal"
+                  >Contacto</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-3">
+            <p style="color: #ddd;">Copyright &copy; AutoVIP 2020</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="contacto-modal" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Contacto</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="name">Nombre</label>
+                <input
+                  type="text"
+                  name="name"
+                  value=""
+                  class="form-control"
+                  placeholder="Ingresar nombre completo..."
+                />
+              </div>
+              <!-- /.form-group -->
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  value=""
+                  class="form-control"
+                  placeholder="Ingresar Email..."
+                />
+              </div>
+              <!-- /.form-group -->
+              <div class="form-group">
+                <label for="message">Mensaje</label>
+                <textarea
+                  name="message"
+                  rows="8"
+                  cols="40"
+                  class="form-control"
+                  placeholder="Ingresar mensaje..."
+                ></textarea>
+              </div>
+              <!-- /.form-group -->
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" data-dismiss="modal">
+              Enviar
+            </button>
+          </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
 
     <!-- jQuery -->
     <script
@@ -230,6 +364,6 @@
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
     <!-- JS Propio -->
-    <script src="js/app.js"></script>
+    <script src="js/ventas.js"></script>
   </body>
 </html>
